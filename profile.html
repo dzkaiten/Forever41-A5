@@ -20,10 +20,10 @@
     <div class=col-sm-12>
       <img src="images/cat_icon.jpg" class="img-fluid">
       <br><br>
-      <h7>Name: Daniel Zhang</h7> <br>
-      <h7>Birthday: 10/08/1977</h7><br>
-      <h7>Gender: M</h7><br>
-      <h7>Email: dzkaiten@gmail.com</h7><br>
+      <h7 id='name'>Name: Daniel Zhang</h7> <br>
+      <h7 id='bday'>Birthday: 10/08/1977</h7><br>
+      <h7 id='gender'>Gender: M</h7><br>
+      <h7 id='email'>Email: dzkaiten@gmail.com</h7><br>
       <a class="btn btn-outline-dark float-left" href="./edit_prof.html" role="button">Edit Profile</a>
       <br>
       <br>
@@ -56,6 +56,19 @@
     <script>
       $(document).ready(function() {
         console.log(localStorage);
+        if (localStorage.getItem('name')) {
+          document.getElementById('name').innerHTML = 'Name: ' + localStorage.getItem('name');
+        }
+        if (localStorage.getItem('bday')) {
+          document.getElementById('bday').innerHTML = 'Birthday: ' + localStorage.getItem('bday');
+        }
+        if (localStorage.getItem('gender')) {
+          var gender = localStorage.getItem('gender') + '';
+          document.getElementById('gender').innerHTML = 'Gender: ' + gender.charAt(0).toUpperCase() + gender.slice(1);
+        }
+        if (localStorage.getItem('email')) {
+          document.getElementById('email').innerHTML = 'Email: ' + localStorage.getItem('email');
+        }
       });
     </script> 
 
