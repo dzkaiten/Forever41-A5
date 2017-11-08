@@ -28,9 +28,7 @@
       <br>
       <br>
       <h6>My Conditions:</h6>
-      <ul>
-        <li>Diabetes</li>
-        <li>High Blood Pressure</li>
+      <ul id='my-conditions'>
       </ul>
       <a class="btn btn-outline-dark float-left" href="./conditions.html" role="button">Edit Conditions</a>
       <br>
@@ -69,8 +67,23 @@
         if (localStorage.getItem('email')) {
           document.getElementById('email').innerHTML = 'Email: ' + localStorage.getItem('email');
         }
+
+        if (localStorage.getItem('addConditions')) {
+          console.log("LocalStorage: ", localStorage.getItem('addConditions'));
+          var conditions = (localStorage.getItem('addConditions') + '').split(',');
+          console.log(conditions);
+          for (var i = 0; i < conditions.length; i++) {
+            console.log(conditions[i]);
+            var $cond = $('<li/>', {
+          }).text(conditions[i]);
+          $('#my-conditions').append($cond);
+          }
+        }
+
       });
     </script> 
+
+
 
   </body>
   </html>
