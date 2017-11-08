@@ -21,15 +21,15 @@
 
     <div class="col-sm-12">
       <img src="images/cat_icon.jpg" class="img-fluid">
-      <form>
-        Name: <input type="text" name="name"> <br>
-        Birthday: <input type="date" name="age"> <br>
+      <form onsubmit="save_data()" id="edit-form">
+        Name: <input type="text" id="name"> <br>
+        Birthday: <input type="date" id="bday"> <br>
         Gender: <br>
-          <input type="radio" name="gender" value="male" checked> Male<br>
-          <input type="radio" name="gender" value="female"> Female<br>
-          <input type="radio" name="gender" value="other"> Other <br>
-        Email: <input type="text" name="email"> <br>
-        <input type="submit" name="submit" value="Save Changes">
+          <input type="radio" id="gender" name="genderAnswer" value="male" checked> Male<br>
+          <input type="radio" id="gender" name="genderAnswer" value="female"> Female<br>
+          <input type="radio" id="gender" name="genderAnswer" value="other"> Other <br>
+        Email: <input type="text" id="email"> <br>
+        <input onclick="window.location.href = './profile.html';" type="submit" id="submit" value="Save Changes">
       </form>
 
       <h6> My Conditions: </h6>
@@ -54,6 +54,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="./javascript/js.js"></script>
+
+    <script>
+      function save_data() {
+        var name = document.getElementById("name");
+        var birthday = document.getElementById("bday");
+        var gender = document.getElementById("gender");
+        var email = document.getElementById("email");
+
+        localStorage.setItem('name', name.value);
+        localStorage.setItem('birthday', birthday.value);
+        localStorage.setItem('gender', gender.value);
+        localStorage.setItem('email', email.value);
+
+        // window.location.href = './profile.html';
+
+      }
+    </script>
+
+    <script>
+      $('#edit-form').submit(function() {
+        window.location.href = './profile.html';
+      })
+    </script>
+
 
   </body>
   </html>
