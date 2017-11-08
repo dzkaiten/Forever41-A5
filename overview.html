@@ -28,24 +28,24 @@
       <li class="nav-item">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Food</a>
       </li>
-    </ul>
-
-
+    </ul> 
 
     <!-- Tab panes -->
     <div class="tab-content">
       <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <ul id="lifestyle-list">
-          <li>1</li>
-          <li>qwertyuiop</li>
-          <li>zxcvbnm</li>
+        <ul id="overview-lifestyle-list">
+          <li>Lose extra pounds and watch your waistline</li>
+          <li>Monitor your blood pressure at home</li>
+          <li>Exercise regularly</li>
+          <li>Catch some ZZZs.</li>
+          <li>Manage stress.</li>
+          <li>See your doctor regularly.</li>
         </ul>
       </div>
       <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <ul id="food-list">
-          <li>2</li>
-          <li>qwertyuiop</li>
-          <li>zxcvbnm</li>
+        <ul id="overview-food-list">
+          <li>Fresh fruits and vegetables</li>
+          <li>High-quality protein such as eggs, beans, low-fat dairy, and unsweetened yogurt</li>
         </ul>
       </div>
     </div>
@@ -78,7 +78,9 @@
           var conditions = (localStorage.getItem('addConditions') + '').split(',');
           console.log(conditions);
 
-          $('#home').load('./diabetes.html #diabetes-food');
+          // dynamically add page content
+          }
+          // $('#home').load('./diabetes.html #diabetes-food');
         }  
       })
     </script>
